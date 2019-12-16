@@ -1,22 +1,20 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-venue: "UCSB Library, First Floor Oceanside, rm 1575"        # brief name of host site 
-without address (e.g., "Euphoric State University")
-address: "525 UCen Road, Santa Barbara, CA"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
+venue: "UCSB Library"        # brief name of host site without address (e.g., "Euphoric State University")
+address: "525 U-Can Road"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
 country: "us"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes)
 language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-latlng: "34.413868,-119.845726"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
-humandate: "January 17, 2020"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "12:30 pm - 5:00 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+latitude: "34.413151"     # decimal latitude of workshop venue (use https://www.latlong.net/)
+longitude: "-119.845216"    # decimal longitude of the workshop venue (use https://www.latlong.net)
+humandate: "Friday January 17, 2020"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "8:30 am - 12:00 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 startdate: 2020-01-17      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2020-01-17        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["Jon Jablonski"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["Kristi Liu, "Torin White"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-email: ["library-collaboratory@ucsb.edu", "jonjab@ucsb.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]    
-eventbrite: "86410178169"     # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
-collaborative_notes: https://pad.carpentries.org/2020-01-31-UCSB-git            # optional: URL for the workshop collaborative notes, e.g. an 
-Etherpad or Google Docs document
-
+helper: ["Torin White", "Kristi Liu"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+email: ["library-collaboratory@ucsb.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+collaborative_notes: https://pad.carpentries.org/2020-01-17-UCSB-bash            # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
+eventbrite: "86064628621"          # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
@@ -100,14 +98,14 @@ if the latitude and longitude of the workshop have been set.  You
 can use https://itouchmap.com/latlong.html to find the lat/long of an
 address.
 {% endcomment %}
-{% if page.latlng %}
+{% if page.latitude and page.longitude %}
 <p id="where">
   <strong>Where:</strong>
   {{page.address}}.
   Get directions with
-  <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
+  <a href="//www.openstreetmap.org/?mlat={{page.latitude}}&mlon={{page.longitude}}&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+  <a href="//maps.google.com/maps?q={{page.latitude}},{{page.longitude}}">Google Maps</a>.
 </p>
 {% endif %}
 
@@ -155,7 +153,7 @@ special instructions.
 </p>
 <ul>
   <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible and all inclusive restrooms are available.</li>
+  <li>Accessible restrooms are available.</li>
 </ul>
 <p>
   Materials will be provided in advance of the workshop and
@@ -198,16 +196,8 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
-{% if site.carpentry == "swc" %} 
-<p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% elsif site.carpentry == "dc" %}
-<p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% elsif site.carpentry == "lc" %}
-<p><a href="{{ site.lc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
-<p><a href="{{ site.lc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
-{% endif %}
+<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 
 <hr/>
 
