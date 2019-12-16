@@ -17,9 +17,7 @@ helper: ["Torin White", "Kristi Liu"]     # boxed, comma-separated list of helpe
 email: ["library-collaboratory@ucsb.edu"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes: https://pad.carpentries.org/2020-01-17-UCSB-git            
 # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
-eventbrite: "86410178169"          # optional: alphanumeric key for 
-Eventbrite 
-registration, e.g., "1234567890AB" (if Eventbrite is being used)
+eventbrite: "86410178169"          # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
